@@ -20,356 +20,60 @@ document.getElementById("score").innerHTML=score;
 document.getElementById("moves").innerHTML=moves;
 
 
-(function() {
+function addCardclickEvents1(cardno){
   cards = document.querySelectorAll(".card.effect__click");
-  //for(i=0 ; i<8 ; i++){
-    cards[shuffledTiles1[0]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
+  cards[shuffledTiles1[cardno]].addEventListener( "click", function() {
+    var c = this.classList;
+    moves++;
+    c.add("flipped");
+    if(opencard_check==0){
+        opencard = c;
+        opencard_check=1;
+    }
+    else if(opencard_check==1){
+          if((cards[shuffledTiles2[cardno]].classList).contains("flipped")!=true){
+            backflip(c);
           }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles2[0]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-    });
-    
-    cards[shuffledTiles2[0]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles1[0]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-        });
-        
-        cards[shuffledTiles1[1]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles2[1]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-        });
-        cards[shuffledTiles2[1]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles1[1]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-        });
-        
-        cards[shuffledTiles1[2]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles2[2]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-        });
-        cards[shuffledTiles2[2]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles1[2]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-        });
-        
-        cards[shuffledTiles1[3]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles2[3]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-        });
-        cards[shuffledTiles2[3]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles1[3]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-        });
-        
-        cards[shuffledTiles1[4]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles2[4]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-        });
-        cards[shuffledTiles2[4]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles1[4]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-        });
-        
-        cards[shuffledTiles1[5]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles2[5]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-        });
-        cards[shuffledTiles2[5]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles1[5]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-        });
-        
-        cards[shuffledTiles1[6]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles2[6]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-        });
-        cards[shuffledTiles2[6]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles1[6]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-        });
-        
-        cards[shuffledTiles1[7]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles2[7]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
-        });
-        cards[shuffledTiles2[7]].addEventListener( "click", function() {
-          var c = this.classList;
-          moves++;
-          c.add("flipped");
-          if(opencard_check==0){
-              opencard = c;
-              opencard_check=1;
-          }
-          else if(opencard_check==1){
-                if((cards[shuffledTiles1[7]].classList).contains("flipped")!=true){
-                  backflip(c);
-                }
-                else{
-                  flag=1;
-                  score++;
-                  backflip(c);
-              }
-          }
-        document.getElementById("score").innerHTML=score;
-        document.getElementById("moves").innerHTML=moves;
+          else{
+            flag=1;
+            score++;
+            backflip(c);
+        }
+    }
+    document.getElementById("score").innerHTML=score;
+    document.getElementById("moves").innerHTML=moves;
+  });
+}
 
-        });
-        
-  //}     
+function addCardclickEvents2(cardno){
+  cards[shuffledTiles2[cardno]].addEventListener( "click", function() {
+    var c = this.classList;
+    moves++;
+    c.add("flipped");
+    if(opencard_check==0){
+        opencard = c;
+        opencard_check=1;
+    }
+    else if(opencard_check==1){
+          if((cards[shuffledTiles1[cardno]].classList).contains("flipped")!=true){
+            backflip(c);
+          }
+          else{
+            flag=1;
+            score++;
+            backflip(c);
+        }
+    }
+  document.getElementById("score").innerHTML=score;
+  document.getElementById("moves").innerHTML=moves;
+  });
+}
+
+(function() {
+  for(i=0; i<8; i++){
+    addCardclickEvents1(i);
+    addCardclickEvents2(i);
+  }     
 })();
 
 function backflip(c){
