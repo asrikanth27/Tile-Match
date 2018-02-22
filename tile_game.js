@@ -76,6 +76,20 @@ function addCardclickEvents2(cardno){
   }     
 })();
 
+function finishMessage(moves){
+    if(moves<=24){
+        document.getElementById("comment").innerHTML = "Congratulations\nExcellent!!!";
+    }else if(moves>24 && moves<=30){
+        document.getElementById("comment").innerHTML = "Congratulations\nWell Done!!";
+    }else if(moves>30 && moves<=38){
+        document.getElementById("comment").innerHTML = "Congratulations\nGood Job!...Better luck next time ^_^";
+    }else if(moves>38 && moves<=46){
+        document.getElementById("comment").innerHTML = "Congratulations\nWell Played, but can be played even better...";
+    }else if(moves>46){
+        document.getElementById("comment").innerHTML = "Congratulations\nTry harder next time :)";
+    }
+}
+
 function backflip(c){
    setTimeout(function(){   
        if(flag==0){
@@ -85,17 +99,7 @@ function backflip(c){
             flag=0;
             if(score>7){
                 document.getElementById("comment").style.display="block";
-                if(moves<=24){
-                    document.getElementById("comment").innerHTML = "Congratulations\nExcellent!!!";
-                }else if(moves>24 && moves<=30){
-                    document.getElementById("comment").innerHTML = "Congratulations\nWell Done!!";
-                }else if(moves>30 && moves<=38){
-                    document.getElementById("comment").innerHTML = "Congratulations\nGood Job!...Better luck next time ^_^";
-                }else if(moves>38 && moves<=46){
-                    document.getElementById("comment").innerHTML = "Congratulations\nWell Played, but can be played even better...";
-                }else if(moves>46){
-                    document.getElementById("comment").innerHTML = "Congratulations\nTry harder next time :)";
-                }
+                finishMessage(moves);
             }
         }
         opencard_check=0;
